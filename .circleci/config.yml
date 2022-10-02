@@ -60,6 +60,8 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
+          name: Deploy to S3
+          command: aws s3 sync ../udagram/udagram-frontend s3://udagram-uiInfo
             
 workflows:
   udagram:
