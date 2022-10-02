@@ -62,7 +62,7 @@ jobs:
             echo "# TODO: Install, build, deploy in both apps"
       - run:
           name: Deploy to S3
-          command: aws s3 sync ../udagram/udagram-frontend s3://udagram-uiInfo
+          command: aws s3 sync ./../udagram/udagram-frontend s3://udagram-uiInfo
             
 workflows:
   udagram:
