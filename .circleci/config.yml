@@ -64,7 +64,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            ls -l
+            cd udagram/udagram-frontend && ls -l
             aws s3 cp ./www s3://udagram-ui
             
 workflows:
