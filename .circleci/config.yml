@@ -66,7 +66,7 @@ jobs:
             cd udagram/udagram-frontend && npm i
             npm run build
             ls -l
-            aws s3 cp ./www s3://udagram-ui
+            aws s3 cp www s3://udagram-ui/ --recursive
             
 workflows:
   udagram:
