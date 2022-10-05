@@ -67,6 +67,11 @@ jobs:
             npm run build
             ls -l
             aws s3 cp www s3://udagram-ui/ --recursive
+      - run:
+          name: Deploy to EBS
+          command: |
+            eb deploy udagram-api-dev2
+            eb status
             
 workflows:
   udagram:
@@ -76,3 +81,4 @@ workflows:
       - deploy:
           requires:
             - build
+      
