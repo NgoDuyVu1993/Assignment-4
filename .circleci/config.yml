@@ -80,7 +80,7 @@ workflows:
 
       - eb/deploy:
           
-          environment-name: udagram-api-dev
+          environment-name: udagram-api-dev2
           app-dir: udagram/udagram-api
           requires:
             - deploy
