@@ -72,6 +72,7 @@ jobs:
           command: |
             cd udagram/udagram-api
             npm install
+            ls -l
             eb deploy udagram-api-dev2
       
             
