@@ -6,7 +6,7 @@ import { config } from "./config/config";
 export const s3 = new AWS.S3({
   signatureVersion: "v4",
   region: config.aws_region,
-  params: { Bucket: config.aws_media_bucket },
+  params: { Bucket: config.aws_media_bucket, ContentType: "image/png" },
 });
 
 // Generates an AWS signed URL for retrieving objects
