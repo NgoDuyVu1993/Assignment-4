@@ -34,9 +34,13 @@ export function getPutSignedUrl(key: string): string {
     
   });
 
-  return s3.getSignedUrl("putObject", {
+  var url = s3.getSignedUrl("putObject", {
     Bucket: config.aws_media_bucket,
     ContentType: "image/png",
     Key: key,
   });
+
+  console.log("Signed Url ", url);
+
+  return url;
 }
