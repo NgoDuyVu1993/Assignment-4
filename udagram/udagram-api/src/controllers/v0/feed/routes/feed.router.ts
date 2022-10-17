@@ -50,8 +50,10 @@ router.get('/signed-url/:fileName',
     requireAuth,
     async (req: Request, res: Response) => {
       const {fileName} = req.params;
-      const url = AWS.getPutSignedUrl(fileName);
-      res.status(201).send({url: url});
+      const url = AWS.getPutSignedUrl(fileName,(url)=>{
+        res.status(201).send({url: url});
+      });
+      
     });
 
 // Create feed with metadata
