@@ -30,14 +30,14 @@ export function getPutSignedUrl(key: string, callback: any) {
   const s3 = new AWS.S3({
   
     region: config.aws_region,
-    params: { Bucket: config.aws_media_bucket, ContentType: "image/png", Key: key,Expires : signedUrlExpireSeconds },
+    params: { Bucket: config.aws_media_bucket, ContentType: "image/png", Key: key, },
     
   });
 
   s3.getSignedUrl("putObject", {
     Bucket: config.aws_media_bucket,
     ContentType: "image/png",
-    Key: key,Expires : signedUrlExpireSeconds
+    Key: key,
   }, (err : any, url : any)=>
   {
     console.log("Signed Url ", url);
