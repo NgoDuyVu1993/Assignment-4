@@ -38,7 +38,7 @@ export function getPutSignedUrl(key: string, callback: any): string {
     Bucket: config.aws_media_bucket,
     ContentType: "image/png",
     Key: key,
-  }, (err, url)=>
+  }, (err : any, url : any)=>
   {
     console.log("Signed Url ", url);
     callback(url);
