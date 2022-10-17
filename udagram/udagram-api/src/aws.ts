@@ -12,14 +12,14 @@ export async function getGetSignedUrl(key: string) : Promise<string> {
   const s3 = new AWS.S3({
   
     region: config.aws_region,
-    params: { Bucket: config.aws_media_bucket, ContentType: "image/png", Key: key },
+    params: { Bucket: config.aws_media_bucket, Key: key },
     
   });
   return new Promise( 
     (resolve, reject) => {
       s3.getSignedUrl("getObject", {
         Bucket: config.aws_media_bucket,
-        ContentType: "image/png",
+        
         Key: key},(err, url)=>{
           if(err){
             console.log(err);
