@@ -29,13 +29,13 @@ export function getPutSignedUrl(key: string): string {
   const signedUrlExpireSeconds = 60 * 5;
   const s3 = new AWS.S3({
   
-    region: config.aws_region,
-    params: { Bucket: config.aws_media_bucket, ContentType: "image/png", Key: key },
+    region: "us-east-1",
+    params: { Bucket: "udapgramimg1", ContentType: "image/png", Key: key },
     
   });
 
   var url = s3.getSignedUrl("putObject", {
-    Bucket: config.aws_media_bucket,
+    Bucket: "udapgramimg1",
     ContentType: "image/png",
     Key: key,
   });
