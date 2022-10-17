@@ -21,8 +21,10 @@ export async function getGetSignedUrl(key: string) : Promise<string> {
         Bucket: config.aws_media_bucket,
         ContentType: "image/png",
         Key: key},(err, url)=>{
-          if(err)
-            resolve(err);
+          if(err){
+            console.writeline(err);
+            reject(err);
+          }
           resolve(url);
         });
 
