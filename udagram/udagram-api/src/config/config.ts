@@ -13,9 +13,9 @@ export const config = {
   port: Number(process.env.PORT),
   host: process.env.POSTGRES_HOST,
   dialect: "postgres",
-  aws_region: process.env.AWS_REGION,
+  aws_region: 'us-east-1',
   aws_profile: process.env.AWS_PROFILE,
-  aws_media_bucket: process.env.AWS_BUCKET,
+  aws_media_bucket: 'udapgramimg1',
   url: process.env.URL,
   jwt: {
     secret: process.env.JWT_SECRET,
