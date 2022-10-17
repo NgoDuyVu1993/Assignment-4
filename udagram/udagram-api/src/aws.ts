@@ -22,7 +22,7 @@ export async function getGetSignedUrl(key: string) : Promise<string> {
         ContentType: "image/png",
         Key: key},(err, url)=>{
           if(err)
-            reject(err);
+            resolve(err);
           resolve(url);
         });
 
