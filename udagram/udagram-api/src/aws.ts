@@ -6,7 +6,7 @@ import { config } from "./config/config";
 
 
 // Generates an AWS signed URL for retrieving objects
-export function getGetSignedUrl(key: string): string {
+export async function getGetSignedUrl(key: string) : Promise<string> {
   const signedUrlExpireSeconds = 60 * 5;
 
   const s3 = new AWS.S3({
@@ -15,13 +15,18 @@ export function getGetSignedUrl(key: string): string {
     params: { Bucket: config.aws_media_bucket, ContentType: "image/png", Key: key },
     
   });
+  return new Promise( 
+    (resolve, reject) => {
+      s3.getSignedUrl("getObject", {
+        Bucket: config.aws_media_bucket,
+        ContentType: "image/png",
+        Key: key},(err, url)=>{
+          if(err)
+            reject(err);
+          resolve(url);
+        });
 
-  return s3.getSignedUrl("getObject", {
-    Bucket: config.aws_media_bucket,
-    ContentType: "image/png",
-    Key: key,
-    
-  });
+    });
 }
 
 // Generates an AWS signed URL for uploading objects
