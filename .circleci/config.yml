@@ -80,15 +80,16 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: 
+                - main
+
       
       - deploy:
           requires:
-            - build:
-              filters:
-                branches:
-                  only:
-                    - main
+            - build
 
 
       
