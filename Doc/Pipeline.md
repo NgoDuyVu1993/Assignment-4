@@ -5,7 +5,7 @@
 
 # Pipeline Overview
 The CircleCI Pipeline diagram
-![image](https://github.com/NgoDuyVu1993/Assignment-4/blob/main/image/CircleCI diagram.png)
+![image](https://github.com/NgoDuyVu1993/Assignment-4/blob/main/image/CircleCI%20diagram.png)
 
 After receiving the trigger for code commit, the CircleCI will do following steps:
 - Spin up environment

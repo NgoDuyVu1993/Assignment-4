@@ -1,6 +1,6 @@
 # Infrastructure
 The Application Udagram is hosting on Amazon Platform
-![image](https://github.com/NgoDuyVu1993/Assignment-4/blob/main/image/Application Infrastructure.png)
+![image](https://github.com/NgoDuyVu1993/Assignment-4/blob/main/image/Application%20Infrastructure.png)
 
 ## Amazon RDS
 Amazon Relational Database Service is a management service that allow users to set up, operate, and scale databases on Amazon Cloud
